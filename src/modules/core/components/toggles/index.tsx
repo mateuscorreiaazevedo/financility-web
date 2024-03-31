@@ -1,5 +1,5 @@
-import { HomeTogglesViews } from './views/index.view'
+import { HomeTogglesView } from './views/index.view'
 
 export function HomeToggles() {
-  return <HomeTogglesViews />
+  return <HomeTogglesView />
 }

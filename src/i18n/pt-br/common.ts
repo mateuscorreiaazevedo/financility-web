@@ -8,5 +8,12 @@ export default {
         system: 'Sistema',
       },
     },
+    locale: {
+      title: 'Idioma',
+      label: {
+        'pt-br': 'Português/BR',
+        en: 'Inglês/US',
+      },
+    },
   },
 }

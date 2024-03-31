@@ -19,10 +19,16 @@ export function useNavigation() {
     next: () => router.forward(),
   }
 
+  const toggleLocale = (value: string) => {
+    const url = path.replace(locale, value)
+    router.replace(url)
+  }
+
   return {
     navigation,
     params,
     path,
     searchParams,
+    toggleLocale,
   }
 }
