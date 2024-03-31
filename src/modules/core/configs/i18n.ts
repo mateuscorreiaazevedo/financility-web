@@ -1,7 +1,8 @@
 import { notFound } from 'next/navigation'
 import { getRequestConfig } from 'next-intl/server'
+import { LocaleEnums } from '../utils/enums'
 
-const locales = ['pt-br']
+export const locales = [LocaleEnums.PT_BR]
 
 export default getRequestConfig(async ({ locale }) => {
   if (!locales.includes(locale as any)) notFound()

@@ -1,3 +1,12 @@
 export default {
-  title: 'Hello world',
+  toggles: {
+    theme: {
+      title: 'Tema',
+      label: {
+        light: 'Claro',
+        dark: 'Escuro',
+        system: 'Sistema',
+      },
+    },
+  },
 }

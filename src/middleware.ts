@@ -1,9 +1,10 @@
 import createMiddleware from 'next-intl/middleware'
+import { LocaleEnums } from './modules/core'
 
 export default createMiddleware({
-  locales: ['pt-br'],
+  locales: [LocaleEnums.PT_BR],
 
-  defaultLocale: 'pt-br',
+  defaultLocale: LocaleEnums.PT_BR,
 })
 
 export const config = {

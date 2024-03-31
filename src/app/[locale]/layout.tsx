@@ -1,17 +1,24 @@
-import { ThemeProvider } from '@/modules/core'
-import { Montserrat } from 'next/font/google'
+import { ThemeProvider, TranslateProvider } from '@/modules/core'
+import { Inter as Sans, Bai_Jamjuree } from 'next/font/google'
 import '../../assets/styles/globals.css'
 import { ReactNode } from 'react'
 
-const montserrat = Montserrat({
+const sans = Sans({
   subsets: ['latin'],
-  variable: '--font-montserrat',
+  variable: '--font-sans',
   fallback: ['sans serif'],
 })
 
+const alt = Bai_Jamjuree({
+  weight: ['700'],
+  variable: '--font-alt',
+  fallback: ['sans serif'],
+  subsets: ['latin'],
+})
+
 export const metadata = {
-  title: 'Next setup',
-  description: 'My boilerplate using Next.js 13. Powered by Mateus Azevedo',
+  title: 'Financility - Wallet App',
+  description: 'App of finance control usign Next 14. Powered by Mateus Azevedo.',
 }
 
 type RootLayoutProps = UrlProps & {
@@ -22,9 +29,11 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
   return (
     <html lang={params?.locale}>
       <body
-        className={`${montserrat.variable} min-h-screen w-full bg-background font-medium text-primary`}
+        className={`${sans.variable} ${alt.variable} min-h-screen w-full bg-background font-sans font-semibold`}
       >
-        <ThemeProvider>{children}</ThemeProvider>
+        <TranslateProvider>
+          <ThemeProvider>{children}</ThemeProvider>
+        </TranslateProvider>
       </body>
     </html>
   )
