@@ -2,6 +2,8 @@ import { ThemeProvider, TranslateProvider } from '@/modules/core'
 import { Inter as Sans, Bai_Jamjuree } from 'next/font/google'
 import '../../assets/styles/globals.css'
 import { ReactNode } from 'react'
+import { Metadata } from 'next'
+import { getTranslations } from 'next-intl/server'
 
 const sans = Sans({
   subsets: ['latin'],
@@ -16,9 +18,14 @@ const alt = Bai_Jamjuree({
   subsets: ['latin'],
 })
 
-export const metadata = {
-  title: 'Financility - Wallet App',
-  description: 'App of finance control usign Next 14. Powered by Mateus Azevedo.',
+export async function generateMetadata({ params }: UrlProps): Promise<Metadata> {
+  const { locale } = params as { locale: string }
+  const t = await getTranslations({ locale, namespace: 'common.metadata' })
+
+  return {
+    title: t('root'),
+    description: t('descriptions.root'),
+  }
 }
 
 type RootLayoutProps = UrlProps & {
