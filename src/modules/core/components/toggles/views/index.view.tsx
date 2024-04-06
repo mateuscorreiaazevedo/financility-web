@@ -1,9 +1,15 @@
+'use client'
+import { tv } from 'tailwind-variants'
 import { ToggleLocale } from '../toggle-locale'
 import { ToggleTheme } from '../toggle-theme'
 
+const togglesContainer = tv({
+  base: 'fixed right-2 top-2 z-30 bg-background/20 backdrop-blur border border-muted/10 flex items-center gap-2 rounded lg:right-10 lg:top-10',
+})
+
 export function HomeTogglesView() {
   return (
-    <div className="fixed right-2 top-2 z-30 flex items-center gap-2 lg:right-10 lg:top-10">
+    <div className={togglesContainer()}>
       <ToggleLocale />
       <ToggleTheme />
     </div>

@@ -1,5 +1,7 @@
+import { withTV } from 'tailwind-variants/transformer'
+
 /** @type {import('tailwindcss').Config} */
-module.exports = {
+module.exports = withTV({
   darkMode: ['class'],
   content: [
     './pages/**/*.{ts,tsx}',
@@ -77,5 +79,5 @@ module.exports = {
       },
     },
   },
-  plugins: [require('tailwindcss-animate')],
-}
+  plugins: [require('tailwindcss-animate'), require('tailwind-scrollbar')],
+})
