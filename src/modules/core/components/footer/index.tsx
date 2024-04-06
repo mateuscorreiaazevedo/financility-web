@@ -1,6 +1,5 @@
-import { useFooterModel } from './models/index.model'
-import { FooterView } from './views/index.view'
+import { FooterView } from './view'
 
 export function Footer() {
-  return <FooterView {...useFooterModel()} />
+  return <FooterView />
 }

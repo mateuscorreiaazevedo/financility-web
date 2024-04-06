@@ -1,7 +1,7 @@
 'use client'
 
-import { useToggleLocaleModel } from './models/toggle-locale.model'
-import { ToggleLocaleView } from './views/toggle-locale.view'
+import { useToggleLocaleModel } from '@/modules/core/hooks/toggles/use-toggle-locale'
+import { ToggleLocaleView } from './view'
 
 type Props = {
   asSubContent?: boolean

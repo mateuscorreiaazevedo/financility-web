@@ -1,4 +1,5 @@
-import { Hero, Toggles } from '@/modules/core'
+import { Toggles } from '@/modules/core'
+import { Hero } from '@/modules/home'
 
 export default function Home() {
   return (

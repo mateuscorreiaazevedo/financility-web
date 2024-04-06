@@ -9,5 +9,4 @@ export * from './contexts/translate-context'
 
 export * from './components/toggles'
 export * from './components/footer'
-export * from './components/hero'
 export * from './utils/enums'

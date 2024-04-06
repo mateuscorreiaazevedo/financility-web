@@ -6,7 +6,6 @@ export function useFooterModel() {
   const titles = {
     contact: t('contact.title'),
     navigation: t('navigation.title'),
-    right: t('right', { date: new Date().getFullYear().toString() }),
   }
 
   const contactList = [
