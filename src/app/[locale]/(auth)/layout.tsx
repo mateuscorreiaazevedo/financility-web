@@ -3,5 +3,5 @@ type Props = {
 }
 
 export default function AuthLayout({ children }: Props) {
-  return <>{children}</>
+  return <div className="flex h-screen w-full">{children}</div>
 }

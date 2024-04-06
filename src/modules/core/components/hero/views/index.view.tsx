@@ -2,6 +2,7 @@ import Image from 'next/image'
 import { useHeroModel } from '../models/index.model'
 import { HeroNavigations } from '../navigations'
 import { Text } from '@/components/ui/text'
+import { Sphere } from '@/components/sphere'
 
 export function HeroView(props: ReturnType<typeof useHeroModel>) {
   const { labels: l, images } = props
@@ -60,7 +61,7 @@ export function HeroView(props: ReturnType<typeof useHeroModel>) {
           loading="lazy"
           className="w-max p-10"
         />
-        <div className="absolute -z-10 aspect-square w-full rounded-full bg-gradient-to-bl from-transparent via-primary/20 blur-2xl dark:via-primary/10" />
+        <Sphere />
       </div>
     </section>
   )
