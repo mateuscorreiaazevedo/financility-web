@@ -1,4 +1,4 @@
-import { Footer, ThemeProvider, TranslateProvider } from '@/modules/core'
+import { ThemeProvider, TranslateProvider } from '@/modules/core'
 import { Inter as Sans, Bai_Jamjuree } from 'next/font/google'
 import '../../assets/styles/globals.css'
 import { ReactNode } from 'react'
@@ -39,10 +39,7 @@ export default function RootLayout({ children, params }: RootLayoutProps) {
         className={`${sans.variable} ${alt.variable} min-h-screen w-full bg-background font-sans font-semibold`}
       >
         <TranslateProvider>
-          <ThemeProvider>
-            {children}
-            <Footer />
-          </ThemeProvider>
+          <ThemeProvider>{children}</ThemeProvider>
         </TranslateProvider>
       </body>
     </html>
