@@ -1,7 +1,7 @@
 export default {
   metadata: {
     login: 'Financility - Login',
-    root: 'Financility - Wallet App',
+    root: 'Financility - Digital wallet',
     descriptions: {
       root: 'App of finance control development in Next.js 14 by Mateus Correia Azevedo.',
     },
