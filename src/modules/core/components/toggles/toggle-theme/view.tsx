@@ -24,7 +24,12 @@ export function ToggleThemeView(props: ReturnType<typeof useToggleThemeModel>) {
   return (
     <ComponentRoot>
       <ComponentTrigger asChild>
-        <Button variant={'ghost'} size={'icon'} className="relative">
+        <Button
+          variant={'ghost'}
+          size={asSubContent ? 'icon' : 'sm'}
+          className="relative"
+          role="button"
+        >
           <Icon name="Sun" className="dark:opacity-0" />
           <Icon name="Moon" className="absolute opacity-0 dark:opacity-100" />
           {asSubContent && <span className="text-base">{l.title}</span>}

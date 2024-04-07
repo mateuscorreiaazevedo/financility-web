@@ -9,7 +9,7 @@ export function HeroContentNavigation() {
 
   return (
     <div className="mt-3 flex flex-col items-center gap-2 lg:items-start">
-      <Navigation to={LinksEnum.LOGIN}>
+      <Navigation to={LinksEnum.LOGIN} data-testid="navigation-login">
         <Button className="h-12 px-10 uppercase">
           <Text
             font={'alt'}
@@ -25,7 +25,7 @@ export function HeroContentNavigation() {
         <Text as="p" size={'body/sm'} color={'muted-foreground'}>
           {t('or')}
         </Text>
-        <Navigation to={LinksEnum.REGISTER}>
+        <Navigation to={LinksEnum.REGISTER} data-testid="navigation-register">
           <Text
             size={'body/md'}
             font={'alt'}
