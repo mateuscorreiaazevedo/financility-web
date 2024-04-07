@@ -21,7 +21,7 @@ export function useNavigation() {
 
   const toggleLocale = (value: string) => {
     const url = path.replace(locale, value)
-    router.replace(url)
+    router.replace(url, { scroll: false })
   }
 
   return {

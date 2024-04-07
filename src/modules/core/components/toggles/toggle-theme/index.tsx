@@ -1,7 +1,7 @@
 'use client'
 
-import { useToggleThemeModel } from './models/toggle-theme.model'
-import { ToggleThemeView } from './views/toggle-theme.view'
+import { useToggleThemeModel } from '@/modules/core/hooks/toggles/use-toggle-theme'
+import { ToggleThemeView } from './view'
 
 type Props = {
   asSubContent?: boolean

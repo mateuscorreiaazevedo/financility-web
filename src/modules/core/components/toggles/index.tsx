@@ -1,5 +1,12 @@
-import { HomeTogglesView } from './views/index.view'
+import { ToggleLocale } from './toggle-locale'
+import { ToggleTheme } from './toggle-theme'
+import { TogglesView } from './view'
 
-export function HomeToggles() {
-  return <HomeTogglesView />
+function Toggles() {
+  return <TogglesView />
 }
+
+Toggles.Locale = ToggleLocale
+Toggles.Theme = ToggleTheme
+
+export { Toggles }

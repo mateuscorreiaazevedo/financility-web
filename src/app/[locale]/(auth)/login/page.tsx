@@ -1,3 +1,4 @@
+import { Toggles } from '@/modules/core'
 import { getTranslations } from 'next-intl/server'
 
 export async function generateMetadata({ params }: UrlProps) {
@@ -11,8 +12,9 @@ export async function generateMetadata({ params }: UrlProps) {
 }
 export default function LoginPage() {
   return (
-    <>
+    <div className="flex flex-1 items-center justify-center">
+      <Toggles />
       <h1>Login</h1>
-    </>
+    </div>
   )
 }

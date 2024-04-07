@@ -1,6 +1,7 @@
 'use client'
 
 import { Button } from '@/components/ui/button'
+import { Icon } from '@/components/ui/icon'
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -11,11 +12,10 @@ import {
   DropdownMenuSubTrigger,
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
-import { Icon } from '@/components/ui/icon'
-import { useToggleLocaleModel } from '../models/toggle-locale.model'
+import { useToggleThemeModel } from '@/modules/core/hooks/toggles/use-toggle-theme'
 
-export function ToggleLocaleView(props: ReturnType<typeof useToggleLocaleModel>) {
-  const { asSubContent, data, title } = props
+export function ToggleThemeView(props: ReturnType<typeof useToggleThemeModel>) {
+  const { data, asSubContent, toggleTheme, l } = props
 
   const ComponentRoot = asSubContent ? DropdownMenuSub : DropdownMenu
   const ComponentTrigger = asSubContent ? DropdownMenuSubTrigger : DropdownMenuTrigger
@@ -24,18 +24,24 @@ export function ToggleLocaleView(props: ReturnType<typeof useToggleLocaleModel>)
   return (
     <ComponentRoot>
       <ComponentTrigger asChild>
-        <Button size={'icon'} variant={'ghost'}>
-          <Icon name="Languages" className="" />
-          {asSubContent && <span className="text-base font-semibold">{title}</span>}
+        <Button
+          variant={'ghost'}
+          size={asSubContent ? 'icon' : 'sm'}
+          className="relative"
+          role="button"
+        >
+          <Icon name="Sun" className="dark:opacity-0" />
+          <Icon name="Moon" className="absolute opacity-0 dark:opacity-100" />
+          {asSubContent && <span className="text-base">{l.title}</span>}
         </Button>
       </ComponentTrigger>
       <ComponentContent sideOffset={4} align="end">
         <DropdownMenuGroup>
           {data.map(item => (
             <DropdownMenuItem
-              className="cursor-pointer"
-              key={item.id}
-              onClick={item.action}
+              className="cursor-pointer font-semibold"
+              key={item.value}
+              onClick={() => toggleTheme(item.value)}
             >
               {item.label}
             </DropdownMenuItem>
